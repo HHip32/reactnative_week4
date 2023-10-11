@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index5 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <View style={styles.container}>
@@ -18,25 +20,31 @@ const YourApp = () => {
                 <TextInput
                     style={styles.inputPassword}
                 />
-                <Image style={styles.imgPassword} source={require('./assets/eye.png')} />
+                <Image style={styles.imgPassword} source={require('../imgs/eye.png')} />
             </View>
-            <TouchableOpacity style={styles.btnLogin}>
+            <TouchableOpacity
+                style={styles.btnLogin}
+                onPress={() => navigate("index2")}
+            >
                 <Text style={styles.textOfBtnLogin}>LOGIN</Text>
             </TouchableOpacity>
             <Text style={styles.text2}>When you agree to terms and conditions</Text>
-            <TouchableOpacity style={styles.link}>
+            <TouchableOpacity
+                style={styles.link}
+                onPress={() => navigate("index3")}
+            >
                 <Text style={styles.textOfLink}>For got your password?</Text>
             </TouchableOpacity>
             <Text style={styles.text3}>Or login with</Text>
             <View style={styles.allIcon}>
                 <View style={styles.editFacebook}>
-                    <Image style={styles.iconFacebook} source={require('./assets/iconfacebook.png')} />
+                    <Image style={styles.iconFacebook} source={require('../imgs/iconfacebook.png')} />
                 </View>
                 <View style={styles.editZalo}>
-                    <Image style={styles.iconZalo} source={require('./assets/iconzalo.png')} />
+                    <Image style={styles.iconZalo} source={require('../imgs/iconzalo.png')} />
                 </View>
                 <View style={styles.editGoogle}>
-                    <Image style={styles.iconGoogle} source={require('./assets/icongoogle.png')} />
+                    <Image style={styles.iconGoogle} source={require('../imgs/icongoogle.png')} />
                 </View>
             </View>
 
@@ -192,14 +200,14 @@ const styles = StyleSheet.create({
     iconZalo: {
         width: 25,
         height: 25,
-        
+
     },
     iconGoogle: {
         width: 30,
         height: 30,
-        
+
     }
 
 })
 
-export default YourApp;
+export default index5;

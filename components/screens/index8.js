@@ -1,32 +1,47 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index8 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <View style={styles.container}>
 
-            <Image style={styles.bigEye} source={require('./assets/bigeye.svg')} />
+            <Image style={styles.bigEye} source={require('../imgs/bigeye.svg')} />
 
             <View style={styles.editUser}>
-                <Image style={styles.imgUser} source={require('./assets/group3.svg')} />
+                <Image style={styles.imgUser} source={require('../imgs/group3.svg')} />
                 <TextInput
                     style={styles.inputUser}
                     placeholder='Please input user name'
                 />
             </View>
             <View style={styles.editPass}>
-                <Image style={styles.imgLockPass} source={require('./assets/group5.png')} />
+                <Image style={styles.imgLockPass} source={require('../imgs/group5.png')} />
                 <TextInput
                     style={styles.inputPass}
                     placeholder='Please input password'
                 />
             </View>
             <View style={styles.text2}>
-                <Text style={styles.text3}>Register</Text>
-                <Text style={styles.text3}>Forgot Password</Text>
+                <Text
+                    style={styles.text3}
+                    onPress={() => navigate("index6")}
+                >
+                    Register
+                </Text>
+                <Text
+                    style={styles.text3}
+                    onPress={() => navigate("index3")}
+                >
+                    Forgot Password
+                </Text>
             </View>
-            <TouchableOpacity style={styles.btnRegis}>
+            <TouchableOpacity
+                style={styles.btnRegis}
+                onPress={() => navigate("index5")}
+            >
                 <Text style={styles.textOfBtnRegis}>LOGIN</Text>
             </TouchableOpacity>
             <View style={styles.viewOfText4}>
@@ -34,10 +49,10 @@ const YourApp = () => {
                 <Text style={styles.text4}>Other Login Methods</Text>
             </View>
             <View style={styles.orthermethod}>
-                <Image style={styles.imgMethod} source={require('./assets/group8.svg')} />
-                <Image style={styles.imgMethod} source={require('./assets/group9.svg')} />
+                <Image style={styles.imgMethod} source={require('../imgs/group8.svg')} />
+                <Image style={styles.imgMethod} source={require('../imgs/group9.svg')} />
                 <View style={styles.viewOfFb}>
-                    <Image style={styles.imgMethodFb} source={require('./assets/brandico_facebook.png')} />
+                    <Image style={styles.imgMethodFb} source={require('../imgs/brandico_facebook.png')} />
                 </View>
             </View>
         </View>
@@ -155,7 +170,7 @@ const styles = StyleSheet.create({
         height: 21,
         position: 'absolute'
     }
-    , 
+    ,
     bgOfText4: {
         borderWidth: 1,
         borderColor: '#0E18F5',
@@ -198,4 +213,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default YourApp;
+export default index8;

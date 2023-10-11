@@ -1,22 +1,24 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, Alert, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index1 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('./assets/logo.png')} />
+            <Image style={styles.logo} source={require('../imgs/logo.png')} />
             <Text style={styles.text1}>GROW {'\n'} YOUR BUSINESS</Text>
             <Text style={styles.text2}>We will help you to grow your business using {'\n'} online server</Text>
             <View style={styles.textEdit}>
                 <TouchableOpacity
                     style={[styles.button]}
-                    onPress={() => Alert.alert('Login button pressed')}
+                    onPress={() => navigate("index2")}
                 >
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[styles.button]}
-                    onPress={() => Alert.alert('Sign Up button pressed')}
+                    onPress={() => navigate("index6")}
                 >
                     <Text style={styles.buttonText}>Sign Up</Text>
                 </TouchableOpacity>
@@ -73,4 +75,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default YourApp;
+export default index1;

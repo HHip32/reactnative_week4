@@ -2,25 +2,34 @@ import React from "react";
 import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index3 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <LinearGradient
             colors={['#C7F4F6', '#D1F4F6', '#E5F4F5', '#00CCF9']}
             style={styles.linearGradient}
         >
-            <Image style={styles.logo} source={require('./assets/lock.png')} />
+            <Image style={styles.logo} source={require('../imgs/lock.png')} />
             <Text style={styles.text1}>FORGET PASWORD</Text>
             <Text style={styles.text2}>Provide your account's email for which you want to reset your password</Text>
             <View style={styles.editEmail}>
-                <Image style={styles.mailImage} source={require('./assets/mail.png')} />
+                <Image style={styles.mailImage} source={require('../imgs/mail.png')} />
                 <TextInput
                     style={styles.inputStyle}
                     underlineColorAndroid={"transparent"}
                 />
             </View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.text3}>NEXT</Text>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigate("index4")}
+            >
+                <Text
+                    style={styles.text3}
+                >
+                    NEXT
+                </Text>
             </TouchableOpacity>
         </LinearGradient>
 
@@ -100,4 +109,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default YourApp;
+export default index3;

@@ -2,7 +2,9 @@ import React from "react";
 import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index4 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <LinearGradient
@@ -21,7 +23,10 @@ const YourApp = () => {
                 <TextInput style={styles.input} />
                 <TextInput style={styles.input} />
             </View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigate("index8")}
+            >
                 <Text style={styles.text4}>VERIFY CODE</Text>
             </TouchableOpacity>
         </LinearGradient>
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
         height: '50px',
         flexDirection: "row",
         borderTopWidth: 1,
-        borderLeftWidth: 1, 
+        borderLeftWidth: 1,
         borderBottomWidth: 1
     },
     input: {
@@ -111,4 +116,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default YourApp;
+export default index4;

@@ -1,31 +1,39 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-const YourApp = () => {
+const index7 = (props) => {
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <View style={styles.container}>
 
             <Text style={styles.text1}>LOGIN</Text>
             <View style={styles.editUser}>
-                <Image style={styles.imgUser} source={require('./assets/avatar_user.png')} />
+                <Image style={styles.imgUser} source={require('../imgs/avatar_user.png')} />
                 <TextInput
                     style={styles.inputUser}
                     defaultValue='Name'
                 />
             </View>
             <View style={styles.editPass}>
-                <Image style={styles.imgLockPass} source={require('./assets/lock1.png')} />
+                <Image style={styles.imgLockPass} source={require('../imgs/lock1.png')} />
                 <TextInput
                     style={styles.inputPass}
                     defaultValue='Password'
                 />
-                <Image style={styles.imgEyePass} source={require('./assets/eye.png')} />
+                <Image style={styles.imgEyePass} source={require('../imgs/eye.png')} />
             </View>
-            <TouchableOpacity style={styles.btnRegis}>
+            <TouchableOpacity
+                style={styles.btnRegis}
+                onPress={() => navigate("index1")}
+            >
                 <Text style={styles.textOfBtnRegis}>LOGIN</Text>
             </TouchableOpacity>
-            <Text style={styles.text2}>CREATE ACCOUNT</Text>
+            <Text
+                style={styles.text2}
+                onPress={() => navigate("index6")}
+            >CREATE ACCOUNT</Text>
 
         </View>
 
@@ -126,4 +134,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default YourApp;
+export default index7;

@@ -3,8 +3,10 @@ import { StyleSheet, Image, Text, View, TextInput, TouchableOpacity } from 'reac
 import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 import { useState } from 'react';
 
-const YourApp = () => {
+const index6 = (props) => {
     const [current, setCurrent] = useState("test");
+    const { navigation, route } = props;
+    const { navigate, goBack } = navigation;
     return (
 
         <View style={styles.container}>
@@ -33,7 +35,7 @@ const YourApp = () => {
                 <TextInput
                     style={styles.inputPassword}
                 />
-                <Image style={styles.imgPassword} source={require('./assets/eye.png')} />
+                <Image style={styles.imgPassword} source={require('../imgs/eye.png')} />
             </View>
             <View style={styles.editBirth}>
                 <Text style={styles.textBirth}>Birthday</Text>
@@ -62,7 +64,10 @@ const YourApp = () => {
                     />
                 </RadioButtonGroup>
             </View>
-            <TouchableOpacity style={styles.btnRegis}>
+            <TouchableOpacity
+                style={styles.btnRegis}
+                onPress={() => navigate("index2")}
+            >
                 <Text style={styles.textOfBtnRegis}>REGISTER</Text>
             </TouchableOpacity>
             <Text style={styles.text2}>When you agree to terms and conditions</Text>
@@ -224,4 +229,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default YourApp;
+export default index6;
