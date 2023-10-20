@@ -27,7 +27,7 @@ const YourApp = () => {
             <NavigationContainer>
                 {hideSplashScreen ? (
                     <Stack.Navigator
-                        initialRouteName="index1"
+                        initialRouteName="index7"
                         screenOptions={{ headerShown: false }}
                     >
                         <Stack.Screen name="index1" component={index1} />
